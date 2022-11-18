@@ -4,10 +4,12 @@
 
 #include <string>
 
+enum Effect { None, Edges, Halftone, FSDithering };
+
 class Texture
 {
 public:
-	Texture(const std::string& fileName);
+	Texture(const std::string& fileName, Effect effect = None);
 	Texture(int width, int height,unsigned char *data);
 	void Bind(int slot);
 	inline int GetSlot(){return m_texture;}
@@ -16,7 +18,7 @@ protected:
 private:
 	Texture(const Texture& texture) {}
 	void operator=(const Texture& texture) {}
-	unsigned int m_texture;
+	unsigned int m_texture = 0;
 };
 
 #endif

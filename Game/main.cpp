@@ -5,15 +5,15 @@
 
 int main(int argc,char *argv[])
 {
-	const int DISPLAY_WIDTH = 800;
-	const int DISPLAY_HEIGHT = 800;
+	const int DISPLAY_WIDTH = 512;
+	const int DISPLAY_HEIGHT = 512;
 	const float CAMERA_ANGLE = 0.0f;
 	const float NEAR = 1.0f;
 	const float FAR = 100.0f;
 
 	Game *scn = new Game(CAMERA_ANGLE,(float)DISPLAY_WIDTH/DISPLAY_HEIGHT,NEAR,FAR);
 	
-	Display display(DISPLAY_WIDTH, DISPLAY_HEIGHT, "OpenGL");
+	Display display(DISPLAY_WIDTH, DISPLAY_HEIGHT, "Assignment 1");
 	
 	Init(display);
 	
@@ -23,7 +23,15 @@ int main(int argc,char *argv[])
 
 	while(!display.CloseWindow())
 	{
-		scn->Draw(1,0,scn->BACK,true,false);
+		scn->SetShapeTex(0, 0);
+		scn->Draw(1, 0, scn->BACK, true, false, Effect::None);
+		scn->SetShapeTex(0, 1);
+		scn->Draw(1, 0, scn->BACK, false, false, Effect::Edges);
+		scn->SetShapeTex(0, 2);
+		scn->Draw(1, 0, scn->BACK, false, false, Effect::Halftone);
+		scn->SetShapeTex(0, 3);
+		scn->Draw(1, 0, scn->BACK, false, false, Effect::FSDithering);
+
 		scn->Motion();
 		display.SwapBuffers();
 		display.PollEvents();	

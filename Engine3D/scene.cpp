@@ -62,9 +62,9 @@
 		shaders.push_back(new Shader(fileName));
 	}
 
-	void Scene::AddTexture(const std::string& textureFileName,bool for2D)
+	void Scene::AddTexture(const std::string& textureFileName,bool for2D, Effect effect)
 	{
-		textures.push_back(new Texture(textureFileName));
+		textures.push_back(new Texture(textureFileName, effect));
 	}
 
 	void Scene::AddTexture(int width,int height, unsigned char *data)
@@ -78,7 +78,7 @@
 		cameras.back()->MyTranslate(pos,0);
 	}
 
-	void Scene::Draw(int shaderIndx,int cameraIndx,int buffer,bool toClear,bool debugMode)
+	void Scene::Draw(int shaderIndx,int cameraIndx,int buffer,bool toClear,bool debugMode, Effect effect)
 	{
 		glEnable(GL_DEPTH_TEST);
 		glm::mat4 Normal = MakeTrans();
@@ -88,9 +88,24 @@
 		if(toClear)
 		{
 			if(shaderIndx>0)
-				Clear(1,0,1,1);
+				Clear(0,0,0,0);
 			else
 				Clear(0,0,0,0);
+		}
+		switch (effect)
+		{
+			case Edges:
+				glViewport(256, 256, 256, 256);
+				break;
+			case FSDithering:
+				glViewport(256, 0, 256, 256);
+				break;
+			case Halftone:
+				glViewport(0, 256, 256, 256);
+				break;
+			default:
+				glViewport(0, 0, 256, 256);
+				break;
 		}
 
 		for (unsigned int i=0; i<shapes.size();i++)
@@ -174,7 +189,6 @@
 
 	void Scene::Resize(int width,int height)
 	{
-	
 		cameras[0]->SetProjection(cameras[0]->GetAngle(),(float)width/height);
 		glViewport(0,0,width,height);
 		std::cout<<cameras[0]->GetRelationWH()<<std::endl;

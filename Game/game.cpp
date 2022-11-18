@@ -23,11 +23,13 @@ Game::Game(float angle ,float relationWH, float near1, float far1) : Scene(angle
 
 void Game::Init()
 {		
-
 	AddShader("../res/shaders/pickingShader");	
 	AddShader("../res/shaders/basicShader");
 	
-	AddTexture("../res/textures/box0.bmp",false);
+	AddTexture("../res/textures/lena256.jpg", false, None);
+	AddTexture("../res/textures/lena256.jpg", false, Edges);
+	AddTexture("../res/textures/lena256.jpg", false, Halftone);
+	AddTexture("../res/textures/lena256.jpg", false, FSDithering);
 
 	AddShape(Plane,-1,TRIANGLES);
 	

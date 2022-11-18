@@ -1,0 +1,32 @@
+﻿  bezier1D.cpp
+c1xx : fatal  error C1083: Cannot open source file: 'bezier1D.cpp': No such file or directory
+  bezier2D.cpp
+c1xx : fatal  error C1083: Cannot open source file: 'bezier2D.cpp': No such file or directory
+  Camera.cpp
+C:\home\dev\graphics\hw1\BasicEngine\Engine3D\Camera.cpp(2,10): fatal  error C1083: Cannot open include file: 'glm/gtc/matrix_transform.hpp': No such file or directory
+  DrawBuffer.cpp
+c1xx : fatal  error C1083: Cannot open source file: 'DrawBuffer.cpp': No such file or directory
+  EulerAngles.cpp
+c1xx : fatal  error C1083: Cannot open source file: 'EulerAngles.cpp': No such file or directory
+  IndexBuffer.cpp
+C:\home\dev\graphics\hw1\BasicEngine\Engine3D\IndexBuffer.cpp(8,10): fatal  error C1083: Cannot open include file: 'glad/include/glad/glad.h': No such file or directory
+  kdtree.cpp
+c1xx : fatal  error C1083: Cannot open source file: 'kdtree.cpp': No such file or directory
+  Log.cpp
+c1xx : fatal  error C1083: Cannot open source file: 'Log.cpp': No such file or directory
+  Mesh.cpp
+  MeshConstructor.cpp
+C:\home\dev\graphics\hw1\BasicEngine\Engine3D\MeshConstructor.cpp(2,10): fatal  error C1083: Cannot open include file: 'glad/include/glad/glad.h': No such file or directory
+  MovableGLM.cpp
+  obj_loader.cpp
+  scene.cpp
+C:\home\dev\graphics\hw1\BasicEngine\Engine3D\scene.cpp(2,10): fatal  error C1083: Cannot open include file: 'glad/include/glad/glad.h': No such file or directory
+  shader.cpp
+  shape.cpp
+C:\home\dev\graphics\hw1\BasicEngine\Engine3D\shape.cpp(1,10): fatal  error C1083: Cannot open include file: 'glad/include/glad/glad.h': No such file or directory
+  texture.cpp
+  VertexArray.cpp
+C:\home\dev\graphics\hw1\BasicEngine\Engine3D\VertexArray.cpp(10,10): fatal  error C1083: Cannot open include file: 'glad/include/glad/glad.h': No such file or directory
+  VertexBuffer.cpp
+C:\home\dev\graphics\hw1\BasicEngine\Engine3D\VertexBuffer.cpp(9,10): fatal  error C1083: Cannot open include file: 'glad/include/glad/glad.h': No such file or directory
+  Generating Code...

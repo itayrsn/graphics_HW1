@@ -24,7 +24,7 @@ public:
 	void AddShapeCopy(int indx,int parent,unsigned int mode);
 	
 	void AddShader(const std::string& fileName);
-	void AddTexture(const std::string& textureFileName, bool for2D);
+	void AddTexture(const std::string& textureFileName, bool for2D, Effect effect);
 	void AddTexture(int width,int height, unsigned char *data);
 
 	void AddCamera(glm::vec3& pos , float fov, float relationWH, float zNear, float zFar);
@@ -35,7 +35,7 @@ public:
 	virtual void WhenTranslate(){};
 	virtual void WhenRotate(){};
 	virtual void Motion(){};
-	virtual void Draw(int shaderIndx,int cameraIndx,int buffer,bool toClear,bool debugMode);
+	virtual void Draw(int shaderIndx,int cameraIndx,int buffer,bool toClear,bool debugMode, Effect effect);
 	virtual ~Scene(void);
 
 	void MoveCamera(int cameraIndx,int type,float amt);
